@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Component</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/carousel.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="carousel">
+        <div class="carousel__background"></div>
+        <ul class="carousel__contents">
+          <li class="carousel__contents__item carousel__contents__item--active">
+            <img
+              src="./images/maria.jpg"
+              alt="Maria Lastname"
+              class="carousel__contents__item__image"
+            />
+            <blockquote class="carousel__contents__item__text">
+              <p class="carousel__contents__item__text__quote">
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Ratione, in quisquam natus rerum quae consequuntur nisi eligendi
+                accusamus corporis ipsa atque voluptatibus at dicta aliquam
+                libero tenetur necessitatibus optio molestias!"
+              </p>
+              <div class="carousel__contents__item__text__author">
+                <p class="carousel__contents__item__text__author__name">
+                  Firstname Lastname
+                </p>
+                <p class="carousel__contents__item__text__author__job">
+                  CEO at AyayaSoftware
+                </p>
+              </div>
+            </blockquote>
+          </li>
+
+          <li class="carousel__contents__item">
+            <img
+              src="./images/hero.jpg"
+              alt="Maria Lastname"
+              class="carousel__contents__item__image"
+            />
+            <blockquote class="carousel__contents__item__text">
+              <p class="carousel__contents__item__text__quote">
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Ratione, in quisquam natus rerum quae consequuntur nisi eligendi
+                accusamus corporis ipsa atque voluptatibus at dicta aliquam
+                libero tenetur necessitatibus optio molestias!"
+              </p>
+              <div class="carousel__contents__item__text__author">
+                <p class="carousel__contents__item__text__author__name">
+                  Firstname Lastname
+                </p>
+                <p class="carousel__contents__item__text__author__job">
+                  CEO at AyayaSoftware
+                </p>
+              </div>
+            </blockquote>
+          </li>
+        </ul>
+        <div class="carousel__navigation">
+          <button class="carousel__navigation__button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="carousel__navigation__button__icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+          </button>
+
+          <button class="carousel__navigation__button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="carousel__navigation__button__icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+        <ul class="carousel__indicator">
+          <li>
+            <button
+              class="carousel__indicator__button carousel__indicator__button--active"
+            >&nbsp;</button>
+          </li>
+          <li><button class="carousel__indicator__button">&nbsp;</button></li>
+          <li><button class="carousel__indicator__button">&nbsp;</button></li>
+          <li><button class="carousel__indicator__button">&nbsp;</button></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

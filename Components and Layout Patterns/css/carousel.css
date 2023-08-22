@@ -1,0 +1,156 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/*
+MAIN COLOR: 
+#087f5b
+
+GREY COLOR:
+#343a40
+*/
+
+/* ------------------------ */
+/* COMPONENT STYLES */
+/* ------------------------ */
+
+/* CAROUSEL */
+
+.carousel {
+  display: grid;
+  grid-template-columns: 24px 96px 1fr 48px 24px;
+  grid-template-rows: 48px 1fr 48px;
+  margin: 200px auto;
+}
+
+.carousel__background {
+  grid-row: 2 / 3;
+  grid-column: 2 / -2;
+
+  background-color: #087f5b;
+  border-radius: 8px;
+}
+
+.carousel__contents {
+  grid-row: 2 / -2;
+  grid-column: 3 / -3;
+
+  list-style-type: none;
+}
+
+.carousel__contents__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 96px;
+  
+  display: none;
+}
+
+.carousel__contents__item--active {
+  display: flex;
+}
+
+
+.carousel__contents__item__image {
+  width: 192px;
+  height: 192px;
+  transform: scale(1.5);
+  border-radius: 8px;
+  box-shadow: 0 4px 34px 4px rgba(0, 0, 0, 0.16);
+}
+
+.carousel__contents__item__text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  padding: 32px 0px;
+}
+
+.carousel__contents__item__text__quote {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #e6f2ef;
+}
+
+.carousel__contents__item__text__author {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}
+
+.carousel__contents__item__text__author__name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #cee5de;
+}
+
+.carousel__contents__item__text__author__job {
+  font-size: 12px;
+  font-weight: 400;
+  color: #b5d9ce;
+}
+
+.carousel__navigation {
+  grid-row: 2 / -2;
+  grid-column: 1 / -1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0px 0px;
+}
+
+.carousel__navigation__button {
+  width: 48px;
+  height: 48px;
+  color: #087f5b;
+
+  background-color: #ffffff;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px 2px rgba(0, 0, 0, 0.16);
+
+  cursor: pointer;
+}
+
+.carousel__navigation__button__icon {
+  stroke-width: 2px;
+}
+
+.carousel__indicator {
+  grid-row: -2 / -1;
+  grid-column: 2 / -2;
+  align-self: center;
+  justify-self: center;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 12px;
+  
+  list-style-type: none;
+}
+
+.carousel__indicator__button {
+  border: none;
+  background-color: #ffffff;
+  font-size: 0;
+  padding: 6px;
+  border: 2px solid #087f5b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.carousel__indicator__button--active {
+  background-color: #087f5b;
+  cursor: unset;
+}

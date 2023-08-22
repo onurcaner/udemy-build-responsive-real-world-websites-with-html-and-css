@@ -1,0 +1,54 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/*
+MAIN COLOR: 
+#087f5b
+
+GREY COLOR:
+#343a40
+*/
+
+/* ------------------------ */
+/* COMPONENT STYLES */
+/* ------------------------ */
+
+/* TABLE */
+
+.table {
+  margin: 100px auto;
+  border-collapse: collapse;
+  font-size: 20px;
+}
+
+.table th,
+.table td {
+  padding: 16px 24px;
+  text-align: left;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.table__head th {
+  color: #ffffff;
+  background-color: #087f5b;
+
+  width: 25%;
+}
+
+.table__body tr:nth-child(odd) th,
+.table__body tr:nth-child(odd) td {
+  background-color: #ebebec;
+}
+
+.table__body tr:nth-child(even) th,
+.table__body tr:nth-child(even) td {
+  background-color: #c2c4c6;
+}
