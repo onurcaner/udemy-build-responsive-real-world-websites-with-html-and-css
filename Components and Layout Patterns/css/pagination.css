@@ -1,0 +1,125 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/*
+MAIN COLOR: 
+#087f5b
+
+GREY COLOR:
+#343a40
+*/
+
+/* ------------------------ */
+/* COMPONENT STYLES */
+/* ------------------------ */
+
+/* PAGINATION */
+
+.container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+.pagination {
+  position: relative;
+
+  margin: 0px calc(36px + 2ch);
+
+  display: inline-block;
+}
+
+.pagination__pages {
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.pagination__pages__button:link,
+.pagination__pages__button:visited {
+  font-size: 18px;
+  color: #343a40;
+  text-decoration: none;
+  text-align: center;
+
+  display: block;
+  border: 2px solid #087f5b00;
+  border-bottom: 2px solid #087f5b;
+  padding: 6px;
+  width: calc(2ch + 16px);
+  background-color: unset;
+  border-radius: 8px;
+}
+
+.pagination__pages__button:hover,
+.pagination__pages__button:active {
+  color: #ffffff;
+  border: 2px solid #087f5b;
+  background-color: #087f5b;
+}
+
+.pagination__pages__button--active {
+  font-weight: 600;
+}
+
+.pagination__pages__ellipsis {
+  font-size: 20px;
+  color: #5d6166;
+  text-align: center;
+
+  width: calc(2ch + 16px);
+  /* height: calc(2ch + 16px); */
+}
+
+.pagination__navigation {
+}
+
+.pagination__navigation__button {
+  border: none;
+  background-color: unset;
+
+  display: flex;
+  border: 2px solid #087f5b;
+  padding: 4px;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.pagination__navigation__button:hover {
+  background-color: #087f5b;
+}
+.pagination__navigation__button:hover .pagination__navigation__button__icon {
+  color: #ffffff;
+}
+
+.pagination__navigation__button--left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(calc(-100% - 16px), -50%);
+}
+
+.pagination__navigation__button--rigth {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(calc(100% + 16px), -50%);
+}
+
+.pagination__navigation__button__icon {
+  color: #087f5b;
+
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5px;
+}
