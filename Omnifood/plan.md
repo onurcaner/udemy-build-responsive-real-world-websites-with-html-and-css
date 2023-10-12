@@ -52,6 +52,7 @@ Early plan of the landing page of the Omnifood.
 Note: This section may be placed in at the bottom of the "Hero Section" for smoother
 transition into "Features Section" where user clicks the Learn More button at
 the "Hero Section".
+This section may be placed between "Call to Action Section" and "Footer Section".
 
 ### 3. Features
 
@@ -88,7 +89,7 @@ the "Hero Section".
 - - Customer testimonials
 - - - to gain more trust of the user.
 
-### 7. Photo Gallery
+### 6. Photo Gallery
 
 - Includes {Photo Gallery}
 
