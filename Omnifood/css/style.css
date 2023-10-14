@@ -35,6 +35,7 @@ html {
 }
 
 body {
+  font-size: 1em;
   font-family: 'Rubik';
   color: var(--color-text);
 }
@@ -43,6 +44,14 @@ body {
 html {
   .max-width {
     max-width: 1280px;
+  }
+
+  .max-navbar-width {
+    max-width: 1920px;
+  }
+
+  .max-hero-width {
+    max-width: 1440px;
   }
 
   .center {
@@ -75,7 +84,6 @@ html {
 
   .image {
     display: block;
-    width: 100%;
   }
 
   .ul {
@@ -85,38 +93,44 @@ html {
 
 /* Sections ******************************************************************/
 html {
-  .body-header-container {
+  .navbar-container {
+    font-size: 1rem;
     background: var(--hero-background);
   }
 
   .hero-container {
-    display: flex;
-    flex-direction: column;
+    font-size: 1rem;
     background: var(--hero-background);
+    padding: 8em 0;
+    margin-bottom: 2em;
+  }
+
+  .featured-in-container {
+    font-size: 1rem;
+    margin-bottom: 2em;
   }
 }
 
-/* Nav Component *************************************************************/
-.body-header-container {
-  font-size: 1rem;
+/* Navbar Component **********************************************************/
+.navbar {
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em;
+  padding: 1em;
 
   .logo {
     height: 1.5em;
   }
 
   .button-container {
-    font-size: 1em;
+    font-size: 1.125em;
     display: flex;
     align-items: center;
     gap: 2em;
 
     .button,
     .anchor {
-      font-size: 1.125em;
       font-weight: 700;
       text-transform: capitalize;
       padding: 0.75em 1.5em;
@@ -151,11 +165,11 @@ html {
 
 /* Hero Component ************************************************************/
 .hero {
-  font-size: 1rem;
+  font-size: 1em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  padding: 2em;
+  padding: 0 2em;
   gap: 4em;
 
   .text-container {
@@ -165,7 +179,6 @@ html {
     .heading {
       font-size: 3em;
       font-weight: 700;
-      max-width: 20ch;
       margin-bottom: 0.625em;
     }
 
@@ -177,13 +190,12 @@ html {
     }
 
     .button-container {
-      font-size: 1em;
+      font-size: 1.25em;
       display: flex;
       gap: 1em;
       margin-bottom: 4em;
 
       .button {
-        font-size: 1.25em;
         font-weight: 700;
         text-transform: capitalize;
         padding: 0.75em 1.5em;
@@ -210,19 +222,20 @@ html {
     }
 
     .statistic-container {
-      font-size: 1em;
+      font-size: 1.125em;
       display: flex;
       gap: 1em;
       align-items: center;
 
       .customer-container {
+        font-size: 3em;
         display: flex;
 
         .customer {
-          width: 3em;
-          border-radius: 3em;
-          border: solid max(2px, 0.125em) var(--hero-background);
-          margin-right: -1em;
+          width: 1em;
+          border-radius: 50%;
+          border: solid max(2px, 0.0625em) var(--hero-background);
+          margin-right: -0.5em;
 
           &:last-child {
             margin-right: 0;
@@ -231,15 +244,47 @@ html {
       }
 
       .statistic {
-        font-size: 1.125em;
         font-weight: 600;
-        color: var(--color-text--de-emphasized);
+        color: var(--color-text--de-emphasized-2);
 
         .strong {
           font-weight: 700;
           color: var(--main-color--shade10);
         }
       }
+    }
+  }
+
+  .image-container {
+    .image {
+      max-width: 100%;
+    }
+  }
+}
+
+/* Featured In Component *****************************************************/
+.featured-in {
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-text--de-emphasized);
+
+  .heading {
+    font-size: 1.25em;
+    margin-bottom: 1em;
+  }
+
+  .logo-container {
+    font-size: 2em;
+    display: flex;
+    max-width: 100%;
+    overflow-x: auto;
+    gap: 1.25em;
+
+    .logo {
+      height: 1em;
+      filter: grayscale(100%) brightness(0%) contrast(40%);
     }
   }
 }
