@@ -7,8 +7,26 @@
     <link href="./css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <header class="header">
-      <section class="hero">
+    <header class="body-header-container">
+      <div class="image-container">
+        <img
+          class="logo image"
+          src="./content/img/omnifood-logo.png"
+          alt="Omnifood logo"
+        />
+      </div>
+      <nav>
+        <ul class="ul button-container">
+          <li><a href="#" class="clickable anchor">Section 1</a></li>
+          <li><a href="#" class="clickable anchor">Section 2</a></li>
+          <li><a href="#" class="clickable anchor">Section 3</a></li>
+          <li><a href="#" class="clickable anchor">Section 4</a></li>
+          <li><button class="clickable button">Section 5</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="hero-container">
+      <header class="hero max-width center">
         <div class="text-container">
           <h1 class="heading">
             A healthy meal delivered to your door, every single day
@@ -19,8 +37,10 @@
             needs.
           </p>
           <div class="button-container">
-            <button class="button">Start Eating Well</button>
-            <button class="button --de-emphasized">Learn More</button>
+            <button class="clickable button">Start Eating Well</button>
+            <button class="clickable button --de-emphasized">
+              Learn More &DownArrow;
+            </button>
           </div>
           <div class="statistic-container">
             <div class="customer-container">
@@ -70,7 +90,7 @@
             Bowls with various meals on the table"
           />
         </div>
-      </section>
-    </header>
+      </header>
+    </main>
   </body>
 </html>
