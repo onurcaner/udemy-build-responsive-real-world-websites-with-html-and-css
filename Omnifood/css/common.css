@@ -1,0 +1,123 @@
+/* Properties and Global Reset ***********************************************/
+:root {
+  --main-color: #e67e22;
+  --grey-color: #75726f;
+  --section-padding: 2rem;
+  --border-radius: 0.75rem;
+  --transition-duration: 200ms;
+  --transition-function: ease;
+  --shadow-xs: 0 0 1rem rgba(0, 0, 0, 0.08);
+  --shadow-s: 0 0 1.5rem rgba(0, 0, 0, 0.1);
+  --shadow-m: 0 0 2rem rgba(0, 0, 0, 0.12);
+  --shadow-l: 0 0 3rem rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 0 4rem rgba(0, 0, 0, 0.18);
+
+  --main-color--tint90: #fdf2e9;
+  --main-color--tint80: #fae5d3;
+  --main-color--tint70: #f8d8bd;
+  --main-color--tint60: #f5cba7;
+  --main-color--tint50: #f3bf91;
+  --main-color--tint40: #f0b27a;
+  --main-color--tint30: #eea564;
+  --main-color--tint20: #eb984e;
+  --main-color--tint10: #e98b38;
+  --main-color--normal: #e67e22;
+  --main-color--shade10: #cf711f;
+  --main-color--shade20: #b8651b;
+  --main-color--shade30: #a15818;
+  --main-color--shade40: #8a4c14;
+  --main-color--shade50: #733f11;
+  --main-color--shade60: #5c320e;
+  --main-color--shade70: #45260a;
+  --main-color--shade80: #2e1907;
+  --main-color--shade90: #170d03;
+
+  --main-color--brightester: var(--main-color--tint80);
+  --main-color--brightest: var(--main-color--tint60);
+  --main-color--brighter: var(--main-color--tint40);
+  --main-color--bright: var(--main-color--tint20);
+  --main-color--dark: var(--main-color--shade20);
+  --main-color--darker: var(--main-color--shade40);
+  --main-color--darkest: var(--main-color--shade60);
+  --main-color--darkester: var(--main-color--shade80);
+
+  --text-color--brightester: hsla(0, 0%, 40%, 1);
+  --text-color--brightest: hsla(0, 0%, 35%, 1);
+  --text-color--brighter: hsla(0, 0%, 30%, 1);
+  --text-color--bright: hsla(0, 0%, 25%, 1);
+  --text-color: hsla(0, 0%, 20%, 1);
+  --text-color--dark: hsla(0, 0%, 15%, 1);
+  --text-color--darker: hsla(0, 0%, 10%, 1);
+  --text-color--darkest: hsla(0, 0%, 5%, 1);
+  --text-color--darkester: hsla(0, 0%, 0%, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+body {
+  font-size: 1em;
+  font-family: 'Rubik';
+  color: var(--text-color);
+}
+
+/* General Purpose Classes ***************************************************/
+html {
+  .list {
+    list-style: none;
+  }
+
+  .button {
+    border: unset;
+    font-size: inherit;
+    color: inherit;
+    background: unset;
+  }
+
+  .anchor:link,
+  .anchor:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: unset;
+  }
+
+  .clickable {
+    font-family: inherit;
+    line-height: inherit;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: color var(--transition-duration) var(--transition-function),
+      background var(--transition-duration) var(--transition-function);
+  }
+
+  .image {
+    display: block;
+  }
+}
+
+/* Common Styles *************************************************************/
+html {
+  .section-header {
+    .description {
+      font-size: 1.125em;
+      font-weight: 600;
+      margin-bottom: 1em;
+      text-transform: uppercase;
+    }
+
+    .headline {
+      font-size: 2.25em;
+      font-weight: 600;
+      margin-bottom: 2em;
+    }
+  }
+}
