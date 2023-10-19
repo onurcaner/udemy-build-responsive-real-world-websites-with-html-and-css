@@ -96,7 +96,8 @@ html {
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: color var(--transition-duration) var(--transition-function),
-      background var(--transition-duration) var(--transition-function);
+      background var(--transition-duration) var(--transition-function),
+      border var(--transition-duration) var(--transition-function);
   }
 
   .image {
@@ -112,6 +113,7 @@ html {
       font-weight: 600;
       margin-bottom: 1em;
       text-transform: uppercase;
+      color: var(--main-color--dark);
     }
 
     .headline {
@@ -119,5 +121,24 @@ html {
       font-weight: 600;
       margin-bottom: 2em;
     }
+  }
+
+  .title {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1em;
+  }
+
+  .description {
+    font-size: 1em;
+    line-height: 2;
+    font-weight: 400;
+  }
+
+  .icon-css {
+    stroke-width: 1em;
+    display: block;
+    height: 1em;
+    aspect-ratio: 1;
   }
 }
