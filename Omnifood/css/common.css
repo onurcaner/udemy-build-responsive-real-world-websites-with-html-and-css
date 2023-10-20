@@ -11,6 +11,7 @@
   --shadow-m: 0 0 2rem rgba(0, 0, 0, 0.12);
   --shadow-l: 0 0 3rem rgba(0, 0, 0, 0.15);
   --shadow-xl: 0 0 4rem rgba(0, 0, 0, 0.18);
+  --shadow-xs--button-hover: 0 0 1rem #e67e2215;
 
   --main-color--tint90: #fdf2e9;
   --main-color--tint80: #fae5d3;
@@ -58,46 +59,38 @@
   box-sizing: border-box;
 }
 
-html {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1;
-}
-
 body {
   font-size: 1em;
   font-family: 'Rubik';
   color: var(--text-color);
 }
 
-/* General Purpose Classes ***************************************************/
+/* Reset *********************************************************************/
 html {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0;
+  word-spacing: 0;
+
   .list {
     list-style: none;
   }
 
-  .button {
-    border: unset;
-    font-size: inherit;
-    color: inherit;
-    background: unset;
-  }
-
+  .button,
   .anchor:link,
   .anchor:visited {
-    display: inline-block;
-    text-decoration: none;
-    color: unset;
-  }
-
-  .clickable {
     font-family: inherit;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: inherit;
     line-height: inherit;
-    border-radius: var(--border-radius);
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    border: unset;
+    color: inherit;
+    background: unset;
     cursor: pointer;
-    transition: color var(--transition-duration) var(--transition-function),
-      background var(--transition-duration) var(--transition-function),
-      border var(--transition-duration) var(--transition-function);
   }
 
   .image {
@@ -107,31 +100,96 @@ html {
 
 /* Common Styles *************************************************************/
 html {
+  /* Buttons and Links*/
+  .anchor {
+    &:link,
+    &:visited {
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+      text-decoration: none;
+      padding-bottom: max(2px, 0.128em);
+      border-bottom: solid max(2px, 0.128em) currentColor;
+      color: var(--main-color);
+    }
+
+    &:hover,
+    &:active {
+      color: var(--main-color--dark);
+    }
+
+    &.--de-emphasized {
+      &:link,
+      &:visited {
+        color: var(--text-color);
+      }
+
+      &:hover,
+      &:active {
+        color: var(--main-color--dark);
+      }
+    }
+
+    transition: color var(--transition-duration) var(--transition-function),
+      border var(--transition-duration) var(--transition-function);
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    padding: 0.5em 1.5em;
+    border-radius: var(--border-radius);
+    color: #fff;
+    background: var(--main-color);
+    box-shadow: var(--shadow-xs);
+
+    &:hover,
+    &:active {
+      background: var(--main-color--bright);
+    }
+
+    &.--de-emphasized {
+      color: var(--main-color--brightester);
+      background: var(--text-color);
+
+      &:hover,
+      &:active {
+        background: var(--text-color--bright);
+      }
+    }
+
+    transition: border var(--transition-duration) var(--transition-function),
+      color var(--transition-duration) var(--transition-function),
+      background var(--transition-duration) var(--transition-function);
+  }
+
+  /* Section Header */
   .section-header {
     .description {
-      font-size: 1.125em;
-      font-weight: 600;
-      margin-bottom: 1em;
+      font-size: 1.25em;
       text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.5em;
       color: var(--main-color--dark);
     }
 
     .headline {
-      font-size: 2.25em;
-      font-weight: 600;
+      font-size: 2.5em;
       margin-bottom: 2em;
     }
   }
 
-  .title {
+  /* Content */
+  .title,
+  .headline {
     font-size: 1.5em;
     font-weight: 600;
-    margin-bottom: 1em;
   }
 
   .description {
     font-size: 1em;
-    line-height: 2;
+    line-height: 2em;
     font-weight: 400;
   }
 
@@ -140,5 +198,45 @@ html {
     display: block;
     height: 1em;
     aspect-ratio: 1;
+  }
+
+  /* List of icon-text properties within cards */
+  .properties {
+    font-size: 1em;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    .property {
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+
+      .icon-css {
+        font-size: 1.5em;
+        color: var(--main-color);
+      }
+
+      .bold {
+        font-weight: 600;
+      }
+    }
+  }
+
+  /* Card */
+  .card {
+    font-size: 1em;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-m);
+    transition: box-shadow calc(var(--transition-duration) * 2)
+        var(--transition-function),
+      translate calc(var(--transition-duration) * 2) var(--transition-function);
+
+    &:hover {
+      box-shadow: var(--shadow-l);
+    }
   }
 }

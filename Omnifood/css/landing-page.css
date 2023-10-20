@@ -23,7 +23,7 @@ html {
     margin-right: auto;
   }
 
-  /* Webpage Component Modifications *****************************************/
+  /* Webpage Component Modifications */
   .navbar-section-container {
     font-size: 1rem;
     background: var(--main-color--brightester);
@@ -37,7 +37,7 @@ html {
   .hero-section-container {
     font-size: 1rem;
     background: var(--main-color--brightester);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     .section-padding {
       padding-top: var(--section-padding);
@@ -70,10 +70,13 @@ html {
     }
 
     .section-padding {
-      /* padding: var(--section-padding) calc(var(--section-padding) * 2); */
-      /* padding: var(--section-padding) 0; */
       padding: 0;
     }
+  }
+
+  .pricing-section-container {
+    font-size: 1rem;
+    margin-bottom: 16rem;
   }
 }
 
@@ -89,40 +92,18 @@ html {
 
   .button-container {
     font-size: 1em;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 1.5em;
 
-    .button,
-    .anchor {
-      font-weight: 600;
-      text-transform: capitalize;
-      padding: 0.75em 1.5em;
+    .anchor:link,
+    .anchor:visited {
+      border: unset;
+    }
+
+    .button {
       margin-left: 0.5em;
-      color: #fff;
-      background: var(--main-color);
-      box-shadow: var(--shadow-xs);
-
-      &:hover,
-      &:focus,
-      &:active {
-        background: var(--main-color--bright);
-      }
-
-      &.--de-emphasized {
-        font-weight: 600;
-        padding: 0.25em;
-        margin-left: unset;
-        color: var(--text-color);
-        background: unset;
-        box-shadow: unset;
-
-        &:hover,
-        &:focus,
-        &:active {
-          color: var(--main-color--dark);
-        }
-      }
     }
   }
 }
@@ -136,52 +117,30 @@ html {
 
   .text-container {
     .headline {
-      font-size: 3em;
+      font-size: 3.2em;
+      line-height: 1;
       font-weight: 600;
       margin-bottom: 0.75em;
     }
 
     .description {
       font-size: 1.25em;
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 4em;
     }
 
     .button-container {
       font-size: 1.25em;
+      line-height: 1.6;
+      font-weight: 600;
       display: flex;
       gap: 1em;
       margin-bottom: 2em;
-
-      .button {
-        display: flex;
-        font-weight: 600;
-        text-transform: capitalize;
-        padding: 0.75em 1.5em;
-        color: #fff;
-        background: var(--main-color);
-        box-shadow: var(--shadow-xs);
-
-        &:hover,
-        &:focus,
-        &:active {
-          background: var(--main-color--bright);
-        }
-
-        &.--de-emphasized {
-          color: var(--main-color--brightester);
-          background: var(--text-color);
-          &:hover,
-          &:focus,
-          &:active {
-            background: var(--text-color--bright);
-          }
-        }
-      }
     }
 
     .statistic-container {
-      font-size: 1.125em;
+      font-size: 1em;
+      line-height: 2em;
       display: flex;
       gap: 1em;
       align-items: center;
@@ -227,14 +186,14 @@ html {
   flex-direction: column;
   align-items: center;
 
-  /* .section-header {
+  .section-header {
     .description {
-      color: var(--main-color--brightest);
+      color: var(--text-color);
     }
-  } */
+  }
 
   .logo-container {
-    font-size: 1.5em;
+    font-size: 1.6em;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-items: center;
@@ -269,9 +228,13 @@ html {
         grid-column: 1 / 2;
 
         .number {
-          font-size: 4.5em;
+          font-size: 4em;
           font-weight: 600;
-          margin-bottom: 0.25em;
+          margin-bottom: 0.2em;
+        }
+
+        .title {
+          margin-bottom: 1.25em;
         }
       }
 
@@ -330,30 +293,6 @@ html {
 
 /* Meals Component ***********************************************************/
 .meals {
-  /* Helper class within component */
-  .properties {
-    font-size: 1em;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-
-    .property {
-      font-size: 1em;
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-
-      .icon-css {
-        font-size: 1.5em;
-        color: var(--main-color);
-      }
-
-      .bold {
-        font-weight: 600;
-      }
-    }
-  }
-
   .section-header {
     display: flex;
     flex-direction: column;
@@ -367,12 +306,8 @@ html {
     gap: 4em;
     margin-bottom: 4em;
 
-    .meal-card {
+    .meal.card {
       height: 100%;
-      font-size: 1em;
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-m);
 
       .image {
         max-width: 100%;
@@ -399,45 +334,34 @@ html {
         }
       }
 
-      transition: box-shadow calc(var(--transition-duration) * 2)
-          var(--transition-function),
-        translate calc(var(--transition-duration) * 2)
-          var(--transition-function);
       &:hover {
         translate: 0 -0.5em;
-        box-shadow: var(--shadow-l);
       }
     }
 
-    .diets-card {
-      font-size: 1.125em;
+    .diets.card {
       height: 100%;
       display: flex;
       flex-direction: column;
+      border-radius: unset;
+      box-shadow: unset;
+
+      .title {
+        font-size: 2em;
+        margin-bottom: 1em;
+      }
+
+      .properties {
+        font-size: 1.125em;
+      }
     }
   }
 
   .link-container {
+    font-size: 1.125em;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .clickable.anchor {
-      display: flex;
-      &:link,
-      &:visited {
-        font-size: 1.125em;
-        color: var(--main-color);
-        padding-bottom: max(2px, 0.128em);
-        border-bottom: solid max(2px, 0.128em) currentColor;
-        border-radius: 0;
-      }
-
-      &:hover,
-      &:active {
-        color: var(--main-color--dark);
-      }
-    }
   }
 }
 
@@ -455,15 +379,13 @@ html {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4em;
-    row-gap: 5em;
+    row-gap: 6em;
 
     .testimonial {
-      font-size: 1em;
-
       .image {
         height: 4em;
         border-radius: 50%;
-        margin-bottom: 1em;
+        margin-bottom: 0.75em;
       }
 
       .description {
@@ -472,6 +394,10 @@ html {
 
       .commentator {
         font-size: 0.875em;
+
+        &.description {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -504,5 +430,14 @@ html {
         }
       }
     }
+  }
+}
+
+/* Pricing Component *********************************************************/
+.pricing {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
   }
 }
