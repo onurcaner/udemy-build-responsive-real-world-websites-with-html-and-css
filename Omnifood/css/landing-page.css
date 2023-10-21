@@ -32,6 +32,15 @@ html {
       padding-top: calc(var(--section-padding) / 2);
       padding-bottom: calc(var(--section-padding) / 2);
     }
+
+    &.sticky {
+      position: sticky;
+      z-index: 1;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: var(--shadow-m);
+    }
   }
 
   .hero-section-container {
@@ -74,7 +83,7 @@ html {
     }
   }
 
-  .pricing-section-container {
+  .pricing-and-features-section-container {
     font-size: 1rem;
     margin-bottom: 16rem;
   }
@@ -86,11 +95,11 @@ html {
   align-items: center;
   justify-content: space-between;
 
-  .logo {
+  .image {
     height: 1.5em;
   }
 
-  .button-container {
+  .buttons {
     font-size: 1em;
     font-weight: 600;
     display: flex;
@@ -123,13 +132,13 @@ html {
       margin-bottom: 0.75em;
     }
 
-    .description {
+    .text {
       font-size: 1.25em;
       line-height: 1.6;
       margin-bottom: 4em;
     }
 
-    .button-container {
+    .buttons {
       font-size: 1.25em;
       line-height: 1.6;
       font-weight: 600;
@@ -140,23 +149,25 @@ html {
 
     .statistic-container {
       font-size: 1em;
-      line-height: 2em;
       display: flex;
       gap: 1em;
       align-items: center;
 
-      .customer-container {
+      .customers {
         font-size: 2.5em;
         display: flex;
 
-        .customer {
-          width: 1em;
-          border-radius: 50%;
-          border: solid max(2px, 0.0625em) var(--main-color--brightester);
-          margin-right: -0.5em;
+        .image-container {
+          display: flex;
 
-          &:last-child {
-            margin-right: 0;
+          &:not(&:last-child) {
+            margin-right: -0.5em;
+          }
+
+          .image {
+            height: 1em;
+            border-radius: 50%;
+            border: solid max(2px, 0.0625em) var(--main-color--brightester);
           }
         }
       }
@@ -166,7 +177,6 @@ html {
         color: var(--text-color);
 
         .strong {
-          font-weight: 600;
           color: var(--main-color--dark);
         }
       }
@@ -187,12 +197,13 @@ html {
   align-items: center;
 
   .section-header {
-    .description {
+    .text {
       color: var(--text-color);
+      margin-bottom: 1em;
     }
   }
 
-  .logo-container {
+  .logos {
     font-size: 1.6em;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -201,7 +212,7 @@ html {
     overflow-x: auto;
     gap: 2em;
 
-    .logo {
+    .image {
       height: 1em;
       filter: brightness(0%);
       opacity: 1;
@@ -211,7 +222,7 @@ html {
 
 /* How It Works Component ****************************************************/
 .how-it-works {
-  .step-container {
+  .steps {
     font-size: 1em;
     display: flex;
     flex-direction: column;
@@ -235,6 +246,10 @@ html {
 
         .title {
           margin-bottom: 1.25em;
+        }
+
+        .text {
+          line-height: 2;
         }
       }
 
@@ -293,75 +308,56 @@ html {
 
 /* Meals Component ***********************************************************/
 .meals {
-  .section-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card-container {
+  .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: stretch;
     gap: 4em;
     margin-bottom: 4em;
+  }
 
-    .meal.card {
-      height: 100%;
-
-      .image {
-        max-width: 100%;
-      }
-
-      .text-container {
-        padding: 3em 2em 4em;
-
-        .tags {
-          display: flex;
-          gap: 0.5em;
-          margin-bottom: 1em;
-
-          .tag {
-            padding: 0.25em 0.75em;
-            border-radius: 10em;
-            background: var(--text-color--brightest);
-            color: #fff;
-          }
-        }
-
-        .title {
-          margin-bottom: 1.5em;
-        }
-      }
-
-      &:hover {
-        translate: 0 -0.5em;
-      }
+  .card.--meal {
+    .image {
+      max-width: 100%;
     }
 
-    .diets.card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      border-radius: unset;
-      box-shadow: unset;
+    .text-container {
+      padding: 3em 2em 4em;
 
-      .title {
-        font-size: 2em;
+      .tags {
         margin-bottom: 1em;
       }
 
-      .properties {
-        font-size: 1.125em;
+      .title {
+        margin-bottom: 1.5em;
       }
+    }
+
+    &:hover {
+      translate: 0 -0.5em;
+    }
+  }
+
+  .card.--diets {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: unset;
+    box-shadow: unset;
+
+    .title {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    .properties {
+      font-size: 1.125em;
     }
   }
 
   .link-container {
     font-size: 1.125em;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -388,7 +384,8 @@ html {
         margin-bottom: 0.75em;
       }
 
-      .description {
+      .text {
+        line-height: 2;
         margin-bottom: 0.5em;
       }
 
@@ -416,7 +413,7 @@ html {
 
       .image {
         width: 100%;
-        transition: transform calc(var(--transition-duration) * 2)
+        transition: scale calc(var(--transition-duration) * 2)
             var(--transition-function),
           filter calc(var(--transition-duration) * 2) var(--transition-function);
       }
@@ -425,7 +422,7 @@ html {
         box-shadow: var(--shadow-m);
 
         .image {
-          transform: scale(1.0625);
+          scale: 1.0625;
           filter: contrast(1.04) saturate(1.04);
         }
       }
@@ -433,11 +430,123 @@ html {
   }
 }
 
-/* Pricing Component *********************************************************/
-.pricing {
-  .card-container {
+/* Pricing and Features Component ********************************************/
+.pricing-and-features {
+  .cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
     gap: 4em;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+
+    &:first-child {
+      justify-self: end;
+    }
+    &:last-child {
+      justify-self: start;
+    }
+  }
+
+  .cards.--pricing {
+    grid-template-columns: repeat(2, auto);
+    margin-bottom: 2em;
+  }
+
+  .card.--pricing {
+    align-items: center;
+    padding: 4em;
+    position: relative;
+
+    .title {
+      font-size: 1.125em;
+      text-transform: uppercase;
+      color: var(--main-color--dark);
+      margin-bottom: 2em;
+    }
+
+    .price {
+      font-size: 3.2em;
+      font-weight: 600;
+      margin-bottom: 0.25em;
+
+      .smaller {
+        font-size: 0.75em;
+      }
+    }
+
+    .text {
+      font-size: 1em;
+      margin-bottom: 2em;
+    }
+
+    .properties {
+      font-size: 1.125em;
+      margin-bottom: 2em;
+    }
+
+    .button {
+      font-size: 1.125em;
+    }
+
+    &.--emphasized {
+      background: var(--main-color--brightester);
+
+      &::before {
+        content: 'Best Value';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: -50%;
+        rotate: 45deg;
+        translate: -12.5% 100%;
+
+        font-size: 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+        padding: 0.5em 0;
+        color: var(--main-color--brightester);
+        background: var(--main-color);
+      }
+    }
+  }
+
+  .pricing-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+    margin-bottom: 4em;
+  }
+
+  .cards.--features {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .card.--feature {
+    box-shadow: unset;
+    overflow: visible;
+
+    .icon-css {
+      font-size: 2em;
+      padding: 0.5em;
+      border-radius: 50%;
+      overflow: visible;
+      margin-bottom: 1em;
+      color: var(--main-color);
+      background: var(--main-color--brightester);
+    }
+
+    .title {
+      margin-bottom: 0.5em;
+    }
+
+    .text {
+      line-height: 2;
+    }
   }
 }

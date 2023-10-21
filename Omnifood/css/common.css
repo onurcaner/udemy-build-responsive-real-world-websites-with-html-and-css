@@ -3,15 +3,14 @@
   --main-color: #e67e22;
   --grey-color: #75726f;
   --section-padding: 2rem;
-  --border-radius: 0.75rem;
+  --border-radius: 1rem;
   --transition-duration: 200ms;
   --transition-function: ease;
-  --shadow-xs: 0 0 1rem rgba(0, 0, 0, 0.08);
-  --shadow-s: 0 0 1.5rem rgba(0, 0, 0, 0.1);
-  --shadow-m: 0 0 2rem rgba(0, 0, 0, 0.12);
-  --shadow-l: 0 0 3rem rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 0 4rem rgba(0, 0, 0, 0.18);
-  --shadow-xs--button-hover: 0 0 1rem #e67e2215;
+  --shadow-xs: 0 0 0.4rem rgba(0 0 0 / 0.08);
+  --shadow-s: 0 0 0.625rem rgba(0 0 0 / 0.09);
+  --shadow-m: 0 0 1rem rgba(0 0 0 / 0.1);
+  --shadow-l: 0 0 1.6rem rgba(0 0 0 / 0.11);
+  --shadow-xl: 0 0 2.5rem rgba(0 0 0 / 0.12);
 
   --main-color--tint90: #fdf2e9;
   --main-color--tint80: #fae5d3;
@@ -137,8 +136,10 @@ html {
   .button {
     display: flex;
     align-items: center;
+    line-height: 1;
+    font-weight: 600;
     text-transform: capitalize;
-    padding: 0.5em 1.5em;
+    padding: 0.8em 1.6em;
     border-radius: var(--border-radius);
     color: #fff;
     background: var(--main-color);
@@ -166,7 +167,13 @@ html {
 
   /* Section Header */
   .section-header {
-    .description {
+    &.--center-contents {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .text {
       font-size: 1.25em;
       text-transform: uppercase;
       font-weight: 600;
@@ -187,17 +194,21 @@ html {
     font-weight: 600;
   }
 
-  .description {
+  .text {
     font-size: 1em;
-    line-height: 2em;
     font-weight: 400;
   }
 
+  .strong {
+    font-weight: 600;
+  }
+
   .icon-css {
-    stroke-width: 1em;
+    box-sizing: content-box;
     display: block;
     height: 1em;
     aspect-ratio: 1;
+    fill: currentColor;
   }
 
   /* List of icon-text properties within cards */
@@ -206,7 +217,7 @@ html {
     line-height: 1;
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 1.6em;
 
     .property {
       font-size: 1em;
@@ -215,7 +226,7 @@ html {
       gap: 0.5em;
 
       .icon-css {
-        font-size: 1.5em;
+        font-size: 1.6em;
         color: var(--main-color);
       }
 
@@ -237,6 +248,19 @@ html {
 
     &:hover {
       box-shadow: var(--shadow-l);
+    }
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    gap: 0.5em;
+
+    .tag {
+      padding: 0.25em 0.75em;
+      border-radius: 10em;
+      background: var(--text-color--brightest);
+      color: #fff;
     }
   }
 }
