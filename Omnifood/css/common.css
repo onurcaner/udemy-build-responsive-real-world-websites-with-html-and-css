@@ -1,11 +1,14 @@
 /* Properties and Global Reset ***********************************************/
 :root {
   --main-color: #e67e22;
+  --focus-color: #228be6;
   --grey-color: #75726f;
   --section-padding: 2rem;
-  --border-radius: 1rem;
-  --transition-duration: 200ms;
+  --border-radius: 0.5rem;
   --transition-function: ease;
+  --transition-fast: 200ms var(--transition-function);
+  --transition-normal: 300ms var(--transition-function);
+  --transition-slow: 500ms var(--transition-function);
   --shadow-xs: 0 0 0.4rem rgba(0 0 0 / 0.08);
   --shadow-s: 0 0 0.625rem rgba(0 0 0 / 0.09);
   --shadow-m: 0 0 1rem rgba(0 0 0 / 0.1);
@@ -99,12 +102,24 @@ html {
 
 /* Common Styles *************************************************************/
 html {
+  /* Focusable */
+  .focusable {
+    outline: solid max(0.125em, 2px) transparent;
+    outline-offset: max(0.25em, 4px);
+    transition: all var(--transition-normal);
+
+    &:focus-visible {
+      outline-offset: max(0.125em, 2px);
+    }
+  }
+
   /* Buttons and Links*/
   .anchor {
     &:link,
     &:visited {
       display: flex;
       align-items: center;
+      justify-content: center;
       text-transform: capitalize;
       text-decoration: none;
       padding-bottom: max(2px, 0.128em);
@@ -115,6 +130,9 @@ html {
     &:hover,
     &:active {
       color: var(--main-color--dark);
+    }
+    &:focus-visible {
+      outline-color: currentColor;
     }
 
     &.--de-emphasized {
@@ -129,13 +147,13 @@ html {
       }
     }
 
-    transition: color var(--transition-duration) var(--transition-function),
-      border var(--transition-duration) var(--transition-function);
+    transition: all var(--transition-normal);
   }
 
   .button {
     display: flex;
     align-items: center;
+    justify-content: center;
     line-height: 1;
     font-weight: 600;
     text-transform: capitalize;
@@ -144,10 +162,14 @@ html {
     color: #fff;
     background: var(--main-color);
     box-shadow: var(--shadow-xs);
+    transition: all var(--transition-normal);
 
     &:hover,
     &:active {
       background: var(--main-color--bright);
+    }
+    &:focus-visible {
+      outline-color: var(--main-color);
     }
 
     &.--de-emphasized {
@@ -158,11 +180,10 @@ html {
       &:active {
         background: var(--text-color--bright);
       }
+      &:focus-visible {
+        outline-color: var(--text-color);
+      }
     }
-
-    transition: border var(--transition-duration) var(--transition-function),
-      color var(--transition-duration) var(--transition-function),
-      background var(--transition-duration) var(--transition-function);
   }
 
   /* Section Header */
@@ -242,9 +263,7 @@ html {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-m);
-    transition: box-shadow calc(var(--transition-duration) * 2)
-        var(--transition-function),
-      translate calc(var(--transition-duration) * 2) var(--transition-function);
+    transition: all var(--transition-slow);
 
     &:hover {
       box-shadow: var(--shadow-l);
@@ -261,6 +280,39 @@ html {
       border-radius: 10em;
       background: var(--text-color--brightest);
       color: #fff;
+    }
+  }
+
+  /* Form */
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .label {
+      font-size: 1.125em;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+
+    .input {
+      font-size: 1em;
+      font-family: inherit;
+      font-weight: 400;
+
+      padding-block: 0.75em;
+      padding-inline: 0.75em;
+      border-radius: var(--border-radius);
+      border: none;
+      box-shadow: var(--shadow-xs);
+
+      transition: all var(--transition-normal);
+    }
+
+    .button {
+      font-size: 1.125em;
+      padding: 0.75em 1.5em;
+      text-align: center;
     }
   }
 }
