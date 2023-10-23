@@ -9,31 +9,36 @@
     <script src="./js/landing-page.js" defer></script>
   </head>
   <body>
-    <header class="navbar-section-container">
-      <div class="navbar section-width section-padding center">
-        <img
-          class="image"
-          src="./content/img/omnifood-logo.png"
-          alt="Omnifood logo"
-        />
+    <!-- Navbar -->
+    <header class="page-section-container --vertical-spacing --center-contents">
+      <div class="navbar page-section --horizontal-spacing">
+        <a class="anchor focusable-container" href="#">
+          <img
+            class="image outline-on-focus"
+            src="./content/img/omnifood-logo.png"
+            alt="Omnifood logo"
+          />
+        </a>
         <nav>
           <ul class="list buttons">
             <li>
-              <a href="#" class="anchor focusable --de-emphasized"
+              <a href="#how-it-works" class="anchor focusable --de-emphasized"
                 >How It Works</a
               >
             </li>
             <li>
-              <a href="#" class="anchor focusable --de-emphasized">Meals</a>
+              <a href="#meals" class="anchor focusable --de-emphasized"
+                >Meals</a
+              >
             </li>
             <li>
-              <a href="#" class="anchor focusable --de-emphasized"
+              <a href="#testimonials" class="anchor focusable --de-emphasized"
                 >Testimonials</a
               >
             </li>
             <li>
-              <a href="#" class="anchor focusable --de-emphasized"
-                >Pricing and Features</a
+              <a href="#pricing" class="anchor focusable --de-emphasized"
+                >Pricing</a
               >
             </li>
             <li>
@@ -43,9 +48,9 @@
         </nav>
       </div>
     </header>
-
-    <main class="hero-section-container">
-      <article class="hero section-width section-padding center">
+    <!-- Hero -->
+    <main class="page-section-container --vertical-spacing --center-contents">
+      <article class="hero page-section --horizontal-spacing">
         <div class="text-container">
           <h1 class="headline">
             A healthy meal delivered to your door, every single day
@@ -126,11 +131,13 @@
         </figure>
       </article>
     </main>
-
-    <section class="featured-in-section-container">
-      <div class="featured-in section-width center">
+    <!-- Featured In -->
+    <section
+      class="page-section-container --vertical-spacing --center-contents"
+    >
+      <div class="featured-in page-section --horizontal-spacing">
         <header class="section-header">
-          <h2 class="text">Featured In:</h2>
+          <h2 class="text">Featured In</h2>
         </header>
         <ul class="list logos">
           <li>
@@ -171,9 +178,12 @@
         </ul>
       </div>
     </section>
-
-    <section class="how-it-works-section-container">
-      <article class="how-it-works section-width section-padding center">
+    <!-- How It Works -->
+    <section
+      class="page-section-container --vertical-spacing --center-contents"
+      id="how-it-works"
+    >
+      <article class="how-it-works page-section --horizontal-spacing">
         <header class="section-header">
           <p class="text">How It Works</p>
           <h2 class="headline">Your daily dose of health in 3 simple steps</h2>
@@ -246,9 +256,12 @@
         </ol>
       </article>
     </section>
-
-    <section class="meals-section-container">
-      <div class="meals section-width section-padding center">
+    <!-- Meals -->
+    <section
+      class="page-section-container --vertical-spacing --center-contents"
+      id="meals"
+    >
+      <div class="meals page-section --horizontal-spacing">
         <header class="section-header --center-contents">
           <p class="text">Meals</p>
           <h2 class="headline">Omnifood AI chooses from 5,000+ recipes</h2>
@@ -359,11 +372,12 @@
         </div>
       </div>
     </section>
-
-    <section class="testimonials-and-gallery-section-container">
-      <div
-        class="testimonials-and-gallery section-width section-padding center"
-      >
+    <!-- Testimonials and Gallery -->
+    <section
+      class="page-section-container --vertical-spacing --center-contents"
+      id="testimonials"
+    >
+      <div class="testimonials-and-gallery page-section --horizontal-spacing">
         <div class="testimonials-container">
           <header class="section-header">
             <p class="text">Testimonials</p>
@@ -523,10 +537,13 @@
         </ul>
       </div>
     </section>
-
-    <section class="pricing-and-features-section-container">
-      <div class="pricing-and-features section-width section-padding center">
-        <header class="section-header --center-contents">
+    <!-- Pricing and Features -->
+    <section
+      class="page-section-container --vertical-spacing --center-contents"
+      id="pricing"
+    >
+      <div class="pricing-and-features page-section --horizontal-spacing">
+        <header class="section-header center-contents">
           <p class="text">Pricing and Features</p>
           <h2 class="headline">Eating well without breaking the bank</h2>
         </header>
@@ -625,9 +642,11 @@
         </ul>
       </div>
     </section>
-
-    <section class="call-to-action-section-container">
-      <div class="call-to-action section-width center">
+    <!-- Call to Action -->
+    <section
+      class="page-section-container --vertical-spacing --center-contents"
+    >
+      <div class="call-to-action page-section --horizontal-spacing">
         <div class="text-container">
           <header class="section-header">
             <h2 class="headline">Get your first meal for free!</h2>
@@ -686,5 +705,122 @@
         ></div>
       </div>
     </section>
+    <!-- Footer -->
+    <footer class="page-section-container --vertical-spacing --center-contents">
+      <div class="list page-footer page-section --horizontal-spacing">
+        <div class="footer-column --logo-socials-copyright">
+          <a class="anchor focusable-container image-container" href="#">
+            <img
+              class="image outline-on-focus"
+              src="./content/img/omnifood-logo.png"
+              alt="Omnifood logo"
+            />
+          </a>
+          <ul class="list socials">
+            <li>
+              <a
+                href="#"
+                class="anchor focusable-container"
+                aria-label="Instagram logo"
+                ><div class="icon-js" data-icon-name="instagram">
+                  Instagram
+                </div></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="anchor focusable-container"
+                aria-label="Facebook logo"
+                ><div class="icon-js" data-icon-name="facebook">
+                  Facebook
+                </div></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="anchor focusable-container"
+                aria-label="Twitter logo"
+                ><div class="icon-js" data-icon-name="twitter">Twitter</div></a
+              >
+            </li>
+          </ul>
+          <p class="text">
+            Copyright&copy; 2027 by Jonas Schmedtmann. Part of "Build Responsive
+            Real-World Websites with HTML and CSS" online course. Use for
+            learning purposes only.
+          </p>
+        </div>
+
+        <div class="footer-column --title-contact-information">
+          <p class="title">Contact Us</p>
+          <address class="address">
+            <p class="text">
+              623 Harrison Street, 2nd Floor, San Francisco, CA 94107
+            </p>
+            <div class="links">
+              <a class="anchor focusable text" href="tel:415-201-6370"
+                >415-201-6370</a
+              >
+              <a class="anchor focusable text" href="mailto:hello@omnifood.com"
+                >hello@omnifood.com</a
+              >
+            </div>
+          </address>
+        </div>
+
+        <div class="footer-column --title-links">
+          <p class="title">Account</p>
+          <ul class="list links">
+            <li>
+              <a class="anchor focusable link" href="#">Create Account</a>
+            </li>
+            <li>
+              <a class="anchor focusable link" href="#">Sign In</a>
+            </li>
+            <li>
+              <a class="anchor focusable link" href="#">iOS App</a>
+            </li>
+            <li>
+              <a class="anchor focusable link" href="#">Android App</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column --title-links">
+          <p class="title">Company</p>
+          <ul class="list links">
+            <li>
+              <a class="anchor focusable link" href="#">About Omnifood</a>
+            </li>
+            <li>
+              <a class="anchor focusable link" href="#">For Businesses</a>
+            </li>
+            <li>
+              <a class="anchor focusable link" href="#">Cooking Partners</a>
+            </li>
+            <li>
+              <a class="anchor focusable link" href="#">Careers</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column --title-links">
+          <p class="title">Resources</p>
+          <ul class="list links">
+            <li>
+              <a class="anchor focusable link" href="#">Recipe Directory</a>
+            </li>
+            <li>
+              <a class="anchor focusable link" href="#">Help Center</a>
+            </li>
+            <li>
+              <a class="anchor focusable link" href="#">Privacy & Terms</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
