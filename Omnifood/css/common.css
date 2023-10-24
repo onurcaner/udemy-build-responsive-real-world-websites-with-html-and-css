@@ -1,13 +1,16 @@
 /* Properties and Global Reset ***********************************************/
 :root {
-  --main-color: #e67e22;
-  --focus-color: #228be6;
-  --grey-color: #75726f;
+  --_main-color: #e67e22;
+  --_focus-color: #228be6;
+  --_grey-color: #807d7a;
+
   --border-radius: 0.5rem;
+
   --transition-function: ease;
   --transition-fast: 200ms var(--transition-function);
   --transition-normal: 300ms var(--transition-function);
   --transition-slow: 500ms var(--transition-function);
+
   --shadow-xs: 0 0 0.4rem rgba(0 0 0 / 0.08);
   --shadow-s: 0 0 0.625rem rgba(0 0 0 / 0.09);
   --shadow-m: 0 0 1rem rgba(0 0 0 / 0.1);
@@ -23,7 +26,7 @@
   --main-color--tint30: #eea564;
   --main-color--tint20: #eb984e;
   --main-color--tint10: #e98b38;
-  --main-color--normal: #e67e22;
+  --main-color: #e67e22;
   --main-color--shade10: #cf711f;
   --main-color--shade20: #b8651b;
   --main-color--shade30: #a15818;
@@ -34,24 +37,46 @@
   --main-color--shade80: #2e1907;
   --main-color--shade90: #170d03;
 
-  --main-color--brightester: var(--main-color--tint80);
-  --main-color--brightest: var(--main-color--tint60);
-  --main-color--brighter: var(--main-color--tint40);
-  --main-color--bright: var(--main-color--tint20);
-  --main-color--dark: var(--main-color--shade20);
-  --main-color--darker: var(--main-color--shade40);
-  --main-color--darkest: var(--main-color--shade60);
-  --main-color--darkester: var(--main-color--shade80);
+  --grey-color--tint90: #f2f2f2;
+  --grey-color--tint80: #e6e5e4;
+  --grey-color--tint70: #d9d8d7;
+  --grey-color--tint60: #cccbca;
+  --grey-color--tint50: #bfbebd;
+  --grey-color--tint40: #b3b1af;
+  --grey-color--tint30: #a6a4a2;
+  --grey-color--tint20: #999795;
+  --grey-color--tint10: #8c8a88;
+  --grey-color: #807d7a;
+  --grey-color--shade10: #73706e;
+  --grey-color--shade20: #666462;
+  --grey-color--shade30: #595756;
+  --grey-color--shade40: #4c4b49;
+  --grey-color--shade50: #403e3d;
+  --grey-color--shade60: #333231;
+  --grey-color--shade70: #262525;
+  --grey-color--shade80: #191918;
+  --grey-color--shade90: #0d0c0c;
 
-  --text-color--brightester: hsla(0, 0%, 40%, 1);
-  --text-color--brightest: hsla(0, 0%, 35%, 1);
-  --text-color--brighter: hsla(0, 0%, 30%, 1);
-  --text-color--bright: hsla(0, 0%, 25%, 1);
-  --text-color: hsla(0, 0%, 20%, 1);
-  --text-color--dark: hsla(0, 0%, 15%, 1);
-  --text-color--darker: hsla(0, 0%, 10%, 1);
-  --text-color--darkest: hsla(0, 0%, 5%, 1);
-  --text-color--darkester: hsla(0, 0%, 0%, 1);
+  --text-color--brightester: var(--grey-color);
+  --text-color--brightest: var(--grey-color--shade10);
+  --text-color--brighter: var(--grey-color--shade20);
+  --text-color--bright: var(--grey-color--shade30);
+  --text-color: var(--grey-color--shade40);
+  --text-color--dark: var(--grey-color--shade50);
+  --text-color--darker: var(--grey-color--shade60);
+  --text-color--darkest: var(--grey-color--shade70);
+  --text-color--darkester: var(--grey-color--shade80);
+  --text-color-rgb: 76 75 73;
+
+  --text-color--main-color--brightester: var(--main-color--shade10);
+  --text-color--main-color--brightest: var(--main-color--shade20);
+  --text-color--main-color--brighter: var(--main-color--shade30);
+  --text-color--main-color--bright: var(--main-color--shade40);
+  --text-color--main-color: var(--main-color--shade50);
+  --text-color--main-color--dark: var(--main-color--shade60);
+  --text-color--main-color--darker: var(--main-color--shade70);
+  --text-color--main-color--darkest: var(--main-color--shade80);
+  --text-color--main-color--darkester: var(--main-color--shade90);
 }
 
 * {
@@ -134,14 +159,14 @@ html {
       justify-content: center;
       text-transform: capitalize;
       text-decoration: none;
-      padding-bottom: max(2px, 0.128em);
-      border-bottom: solid max(2px, 0.128em) currentColor;
+      padding-bottom: max(2px, 0.125em);
+      border-bottom: solid max(2px, 0.125em) currentColor;
       color: var(--main-color);
     }
 
     &:hover,
     &:active {
-      color: var(--main-color--dark);
+      color: var(--text-color--main-color--brightester);
     }
     &:focus-visible {
       outline-color: currentColor;
@@ -155,7 +180,7 @@ html {
 
       &:hover,
       &:active {
-        color: var(--main-color--dark);
+        color: var(--text-color--main-color);
       }
     }
 
@@ -167,7 +192,7 @@ html {
     align-items: center;
     justify-content: center;
     line-height: 1;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: capitalize;
     padding: 0.8em 1.6em;
     border-radius: var(--border-radius);
@@ -178,14 +203,14 @@ html {
 
     &:hover,
     &:active {
-      background: var(--main-color--bright);
+      background: var(--main-color--tint10);
     }
     &:focus-visible {
       outline-color: var(--main-color);
     }
 
     &.--de-emphasized {
-      color: var(--main-color--brightester);
+      color: var(--main-color--tint90);
       background: var(--text-color);
 
       &:hover,
@@ -204,13 +229,14 @@ html {
       font-size: 1.25em;
       text-transform: uppercase;
       font-weight: 600;
-      margin-bottom: 0.5em;
-      color: var(--main-color--dark);
+      margin-bottom: 0.6em;
+      color: var(--text-color--main-color--brightester);
     }
 
     .headline {
       font-size: 2.5em;
-      margin-bottom: 1em;
+      letter-spacing: -0.01ch;
+      margin-bottom: 1.2em;
     }
   }
 
@@ -219,6 +245,7 @@ html {
   .headline {
     font-size: 1.5em;
     font-weight: 600;
+    color: var(--text-color--darker);
   }
 
   .text {
@@ -228,6 +255,7 @@ html {
 
   .strong {
     font-weight: 600;
+    color: var(--text-color--darker);
   }
 
   .icon-css {
@@ -284,7 +312,7 @@ html {
     .tag {
       padding: 0.25em 0.75em;
       border-radius: 10em;
-      background: var(--text-color--brightest);
+      background: var(--text-color--bright);
       color: #fff;
     }
   }
