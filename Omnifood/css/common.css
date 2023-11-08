@@ -66,7 +66,7 @@
   --text-color--main-color--darkester: var(--main-color--shade90);
 
   --border-radius: 0.5rem;
-  --section-spacing: 4em;
+  --_horizontal-spacing: 4em;
   --max-width--laptop3: 120rem; /* 1920px */
   --max-width--laptop2: 96rem; /* 1536px */
   --max-width--laptop1: 80rem; /* 1280px */
@@ -106,7 +106,6 @@ body {
 /* Reset *********************************************************************/
 html {
   font-weight: 400;
-  font-size: 1rem;
   line-height: 1;
   letter-spacing: 0;
   word-spacing: 0;
@@ -255,11 +254,12 @@ html {
   .headline {
     font-size: 1.6em;
     font-weight: 600;
+    letter-spacing: -0.01ch;
     color: var(--text-color--darker);
   }
 
   .text {
-    font-size: 1em;
+    font-size: 1.125em;
     font-weight: 400;
   }
 
@@ -280,8 +280,8 @@ html {
   .properties {
     font-size: 1em;
     line-height: 1;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     gap: 1.6em;
 
     .property {

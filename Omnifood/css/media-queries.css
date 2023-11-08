@@ -16,11 +16,106 @@
   }
 */
 
-/* Media Queries *************************************************************/
-/* Laptop 2 */
-@media (max-width: 96rem) {
-  /* Nothing Breaks */
+/* @media (max-width: 80rem) {
+  .page-section.--horizontal-spacing.page-section.--horizontal-spacing {
+    &.navbar,
+    &.testimonials-and-gallery,
+    &.page-footer,
+    &.hero,
+    &.call-to-action {
+      max-width: var(--max-width--laptop1);
+    }
+  }
 }
 
-@media (max-width: 80rem) {
+@media (max-width: 96rem) {
+  .page-section.--horizontal-spacing.page-section.--horizontal-spacing {
+    &.navbar,
+    &.testimonials-and-gallery,
+    &.page-footer {
+      max-width: var(--max-width--laptop2);
+    }
+  }
+} */
+
+/* Media Queries *************************************************************/
+@media (max-width: 128rem) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 85em) {
+  .navbar .buttons {
+    font-size: 1.125em;
+  }
+
+  .hero .text-container {
+    .headline {
+      font-size: 3.2em;
+      letter-spacing: -0.03ch;
+    }
+    .text,
+    .buttons {
+      font-size: 1.25em;
+      line-height: 1.8;
+    }
+    .statistic-container {
+      font-size: 1.125em;
+    }
+  }
+
+  .testimonials-and-gallery,
+  .call-to-action {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .testimonials-and-gallery .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .call-to-action .text-container .section-header {
+    .headline {
+      font-size: 3em;
+      letter-spacing: -0.03ch;
+    }
+    .text {
+      font-size: 1.5em;
+      line-height: 1.6;
+    }
+  }
+}
+
+@media (max-width: 72rem) {
+  html {
+    font-size: 80%;
+  }
+  .page-section.--horizontal-spacing.page-section.--horizontal-spacing {
+    &.navbar,
+    &.testimonials-and-gallery,
+    &.page-footer,
+    &.hero,
+    &.call-to-action {
+      max-width: var(--max-width--laptop1);
+    }
+  }
+}
+
+@media (max-width: 65rem) {
+  html {
+    font-size: 75%;
+    --horizontal-padding: calc(var(--_horizontal-spacing) / 4 * 2);
+  }
+  /* Gallery breakpoint */
+}
+
+@media (max-width: 57rem) {
+  /* hero breakpoint */
+  /* features */
+  /* CTO */
+}
+
+@media (max-width: 53rem) {
+  /* Nav breakpoint */
+  /* Meals breakpoint */
 }

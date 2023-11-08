@@ -2,6 +2,8 @@
 
 /* Sections ******************************************************************/
 html {
+  --horizontal-spacing: calc(var(--_horizontal-spacing) / 4 * 4);
+  --horizontal-padding: calc(var(--_horizontal-spacing) / 4 * 4);
   /* Center */
   .center {
     margin-left: auto;
@@ -18,8 +20,8 @@ html {
   /* Horizontal Spacing */
   .page-section.--horizontal-spacing {
     max-width: var(--max-width--laptop1);
-    padding-left: calc(var(--section-spacing) * 1);
-    padding-right: calc(var(--section-spacing) * 1);
+    padding-left: calc(var(--horizontal-padding) * 1);
+    padding-right: calc(var(--horizontal-padding) * 1);
 
     /* Max width */
     &.navbar,
@@ -37,53 +39,53 @@ html {
     &.featured-in,
     &.testimonials-and-gallery,
     &.call-to-action {
-      padding-left: calc(var(--section-spacing) * 0);
-      padding-right: calc(var(--section-spacing) * 0);
+      padding-left: calc(var(--horizontal-padding) * 0);
+      padding-right: calc(var(--horizontal-padding) * 0);
     }
 
     &.call-to-action {
-      margin-left: calc(var(--section-spacing) * 1);
-      margin-right: calc(var(--section-spacing) * 1);
+      margin-left: calc(var(--horizontal-padding) * 1);
+      margin-right: calc(var(--horizontal-padding) * 1);
     }
   }
 
   /* Verical Spacing */
   .page-section-container.--vertical-spacing {
     .page-section {
-      padding-top: calc(var(--section-spacing) * 1);
-      padding-bottom: calc(var(--section-spacing) * 1);
+      padding-top: calc(var(--horizontal-spacing) * 1);
+      padding-bottom: calc(var(--horizontal-spacing) * 1);
     }
 
     &:has(.navbar) {
       .page-section {
-        padding-top: calc(var(--section-spacing) * 0.5);
-        padding-bottom: calc(var(--section-spacing) * 0.5);
+        padding-top: calc(var(--horizontal-spacing) * 0.5);
+        padding-bottom: calc(var(--horizontal-spacing) * 0.5);
       }
     }
 
     &:has(.hero) {
       .page-section {
-        padding-top: calc(var(--section-spacing) * 0.5);
-        padding-bottom: calc(var(--section-spacing) * 1.5);
+        padding-top: calc(var(--horizontal-spacing) * 0.5);
+        padding-bottom: calc(var(--horizontal-spacing) * 2);
       }
     }
 
     &:has(.featured-in) {
       .page-section {
-        padding-top: calc(var(--section-spacing) * 0.5);
-        padding-bottom: calc(var(--section-spacing) * 1);
+        padding-top: calc(var(--horizontal-spacing) * 0.5);
+        padding-bottom: calc(var(--horizontal-spacing) * 1);
       }
 
-      margin-bottom: calc(var(--section-spacing) * 2);
+      margin-bottom: calc(var(--horizontal-spacing) * 2);
       border-bottom: solid 1px var(--grey-color--tint90);
     }
 
     &:has(.how-it-works) {
-      margin-bottom: calc(var(--section-spacing) * 3);
+      margin-bottom: calc(var(--horizontal-spacing) * 3);
     }
 
     &:has(.meals) {
-      margin-bottom: calc(var(--section-spacing) * 2.5);
+      margin-bottom: calc(var(--horizontal-spacing) * 2.5);
     }
 
     &:has(.testimonials-and-gallery) {
@@ -92,11 +94,11 @@ html {
         padding-bottom: 0;
       }
 
-      margin-bottom: calc(var(--section-spacing) * 1.5);
+      margin-bottom: calc(var(--horizontal-spacing) * 1.5);
     }
 
     &:has(.pricing-and-features) {
-      margin-bottom: calc(var(--section-spacing) * 2);
+      margin-bottom: calc(var(--horizontal-spacing) * 2);
     }
 
     &:has(.call-to-action) {
@@ -106,13 +108,13 @@ html {
       }
 
       border-bottom: solid max(0.0625rem, 1px) var(--grey-color--tint90);
-      padding-bottom: calc(var(--section-spacing) * 2);
+      padding-bottom: calc(var(--horizontal-spacing) * 2);
     }
 
     &:has(.page-footer) {
       .page-section {
-        padding-top: calc(var(--section-spacing) * 2);
-        padding-bottom: calc(var(--section-spacing) * 1);
+        padding-top: calc(var(--horizontal-spacing) * 2);
+        padding-bottom: calc(var(--horizontal-spacing) * 1);
       }
     }
   }
@@ -128,8 +130,6 @@ html {
       background-color: var(--main-color--tint90);
     }
 
-    font-size: 1.125em;
-
     &:has(.navbar).sticky {
       position: sticky;
       z-index: 1;
@@ -138,8 +138,8 @@ html {
       background: #fff;
       box-shadow: var(--shadow-m);
 
-      padding-top: calc(var(--section-spacing) / 2);
-      padding-bottom: calc(var(--section-spacing) / 2);
+      padding-top: calc(var(--horizontal-spacing) / 2);
+      padding-bottom: calc(var(--horizontal-spacing) / 2);
     }
   }
 }
@@ -158,7 +158,7 @@ html {
 
   .focusable-container {
     .image {
-      height: 1.5em;
+      height: 1.6em;
     }
 
     &:focus-within {
@@ -170,11 +170,11 @@ html {
   }
 
   .buttons {
-    font-size: 1em;
+    font-size: 1.25em;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 2em;
+    gap: calc(var(--horizontal-spacing) * 0.5);
 
     .anchor:link,
     .anchor:visited {
@@ -192,26 +192,27 @@ html {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 4em;
+  gap: calc(var(--horizontal-spacing) * 1);
 
   .text-container {
     .headline {
-      font-size: 3.2em;
+      font-size: 4em;
       line-height: 1;
-      letter-spacing: -0.02ch;
+      letter-spacing: -0.04ch;
       font-weight: 700;
-      margin-bottom: 0.75em;
+      margin-bottom: 0.5em;
     }
 
     .text {
-      font-size: 1.25em;
-      line-height: 1.8;
-      margin-bottom: 4em;
+      font-size: 1.6em;
+      letter-spacing: -0.01ch;
+      line-height: 1.6;
+      margin-bottom: 3.2em;
     }
 
     .buttons {
-      font-size: 1.25em;
-      line-height: 1.8;
+      font-size: 1.6em;
+      line-height: 1.6;
       font-weight: 600;
       display: flex;
       gap: 1em;
@@ -219,13 +220,13 @@ html {
     }
 
     .statistic-container {
-      font-size: 1em;
+      font-size: 1.25em;
       display: flex;
-      gap: 1em;
+      gap: 0.8em;
       align-items: center;
 
       .customers {
-        font-size: 2.5em;
+        font-size: 2em;
         display: flex;
 
         .image-container {
@@ -244,7 +245,7 @@ html {
       }
 
       .statistic {
-        font-size: 1.125em;
+        font-size: 1em;
         font-weight: 600;
 
         .strong {
@@ -278,13 +279,15 @@ html {
   }
 
   .logos {
+    font-size: 2em;
+    align-self: stretch;
     display: flex;
-    justify-content: space-around;
-    max-width: 100%;
+    justify-content: space-between;
+    gap: 2em;
     overflow-x: auto;
 
     .image {
-      max-height: 2em;
+      max-height: 1em;
       filter: brightness(0%);
       opacity: 0.5;
     }
@@ -297,13 +300,13 @@ html {
     font-size: 1em;
     display: flex;
     flex-direction: column;
-    gap: calc(var(--section-spacing) * 2);
+    gap: 8em;
 
     .step {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
-      gap: 4em;
+      gap: calc(var(--horizontal-spacing) * 1);
 
       .text-container {
         grid-row: 1 / 2;
@@ -312,6 +315,7 @@ html {
         .number {
           font-size: 5em;
           font-weight: 600;
+          letter-spacing: -0.05ch;
           margin-bottom: 0.1em;
           color: var(--text-color--brightest);
         }
@@ -383,7 +387,8 @@ html {
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4em;
+    column-gap: calc(var(--horizontal-spacing) * 1);
+    row-gap: 3em;
     margin-bottom: 3em;
   }
 
@@ -402,6 +407,10 @@ html {
       .title {
         margin-bottom: 1.5em;
       }
+
+      .properties {
+        font-size: 1.125em;
+      }
     }
 
     &:hover {
@@ -418,16 +427,17 @@ html {
 
     .title {
       font-size: 2em;
+      letter-spacing: -0.02ch;
       margin-bottom: 1em;
     }
 
     .properties {
-      font-size: 1.125em;
+      font-size: 1.25em;
     }
   }
 
   .link-container {
-    font-size: 1.125em;
+    font-size: 1.25em;
     display: flex;
     justify-content: center;
   }
@@ -440,13 +450,13 @@ html {
   align-items: center;
 
   .testimonials-container {
-    padding: 4em;
+    padding: 4em calc(var(--horizontal-spacing) * 1);
   }
 
   .testimonials {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 4em;
+    column-gap: calc(var(--horizontal-spacing) * 1);
     row-gap: 6em;
 
     .testimonial {
@@ -462,7 +472,7 @@ html {
       }
 
       .commentator {
-        font-size: 0.875em;
+        font-size: 1em;
         color: var(--text-color--brighter);
       }
     }
@@ -471,8 +481,10 @@ html {
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 1em 1em 1em 0;
-    gap: 1em;
+    padding-top: calc(var(--horizontal-spacing) * 0.25);
+    padding-right: calc(var(--horizontal-spacing) * 0.25);
+    padding-bottom: calc(var(--horizontal-spacing) * 0.25);
+    gap: calc(var(--horizontal-spacing) * 0.25);
 
     .image-container {
       overflow: hidden;
@@ -501,7 +513,7 @@ html {
   .cards {
     display: grid;
     justify-items: center;
-    gap: 4em;
+    gap: calc(var(--horizontal-spacing) * 1);
   }
 
   .card {
@@ -536,7 +548,7 @@ html {
     .price {
       font-size: 3.2em;
       font-weight: 600;
-      letter-spacing: -0.02ch;
+      letter-spacing: -0.03ch;
       margin-bottom: 0.25em;
       color: var(--text-color--darker);
 
@@ -597,7 +609,7 @@ html {
   }
 
   .cards.--features {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .card.--feature {
@@ -627,7 +639,7 @@ html {
 /* Call to Action Component **************************************************/
 .call-to-action {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
   border-radius: var(--border-radius);
   overflow: hidden;
   background-color: var(--main-color);
@@ -639,21 +651,22 @@ html {
   box-shadow: var(--shadow-xl);
 
   .text-container {
-    padding: 4em;
+    padding: 4em calc(var(--horizontal-spacing) * 1);
     color: var(--text-color--main-color--darker);
 
     .section-header {
       .headline {
-        font-size: 3em;
+        font-size: 3.2em;
+        letter-spacing: -0.03ch;
         font-weight: 700;
-        letter-spacing: -0.02ch;
-        margin-bottom: 0.75em;
+        margin-bottom: 1em;
         color: inherit;
       }
 
       .text {
-        font-size: 1.25em;
-        line-height: 1.8;
+        font-size: 1.6em;
+        letter-spacing: -0.01ch;
+        line-height: 1.6;
         font-weight: 400;
         text-transform: unset;
         margin-bottom: 4em;
@@ -664,7 +677,7 @@ html {
     .form {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      column-gap: 2.5em;
+      column-gap: calc(var(--horizontal-spacing) * 1);
       row-gap: 1.5em;
 
       .form-field {
@@ -711,7 +724,7 @@ html {
   display: grid;
   grid-template-columns: repeat(2, 1.5fr) repeat(3, 1fr);
   justify-items: start;
-  gap: 4em;
+  gap: calc(var(--horizontal-spacing) * 1);
 
   .footer-column {
     display: flex;
