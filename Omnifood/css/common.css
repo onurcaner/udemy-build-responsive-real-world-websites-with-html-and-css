@@ -66,7 +66,7 @@
   --text-color--main-color--darkester: var(--main-color--shade90);
 
   --border-radius: 0.5rem;
-  --section-spacing: 4rem;
+  --section-spacing: 4em;
   --max-width--laptop3: 120rem; /* 1920px */
   --max-width--laptop2: 96rem; /* 1536px */
   --max-width--laptop1: 80rem; /* 1280px */
@@ -245,7 +245,7 @@ html {
 
     .headline {
       font-size: 2.5em;
-      letter-spacing: -0.01ch;
+      letter-spacing: -0.02ch;
       margin-bottom: 1.2em;
     }
   }
@@ -253,7 +253,7 @@ html {
   /* Content */
   .title,
   .headline {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 600;
     color: var(--text-color--darker);
   }

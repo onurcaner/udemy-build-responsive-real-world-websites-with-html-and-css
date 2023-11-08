@@ -19,7 +19,8 @@
 /* Media Queries *************************************************************/
 /* Laptop 2 */
 @media (max-width: 96rem) {
-  .page-section.--horizontal-spacing {
-    /* background: orangered */
-  }
+  /* Nothing Breaks */
+}
+
+@media (max-width: 80rem) {
 }
