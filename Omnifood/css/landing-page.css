@@ -2,8 +2,6 @@
 
 /* Sections ******************************************************************/
 html {
-  --section-spacing: 4rem;
-
   /* Center */
   .center {
     margin-left: auto;
@@ -19,64 +17,57 @@ html {
 
   /* Horizontal Spacing */
   .page-section.--horizontal-spacing {
-    max-width: 1280px;
-    padding-left: var(--section-spacing);
-    padding-right: var(--section-spacing);
+    max-width: var(--max-width--laptop1);
+    padding-left: calc(var(--section-spacing) * 1);
+    padding-right: calc(var(--section-spacing) * 1);
 
     /* Max width */
     &.navbar,
     &.testimonials-and-gallery,
     &.page-footer {
-      max-width: 1920px;
+      max-width: var(--max-width--laptop3);
     }
+
     &.hero,
     &.call-to-action {
-      max-width: 1440px;
+      max-width: var(--max-width--laptop2);
     }
 
     /* Padding */
-    &.navbar,
-    &.hero {
-      padding-left: calc(var(--section-spacing) * 0.5);
-      padding-right: calc(var(--section-spacing) * 0.5);
-    }
     &.featured-in,
-    &.testimonials-and-gallery {
-      padding-left: 0;
-      padding-right: 0;
-    }
+    &.testimonials-and-gallery,
     &.call-to-action {
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: var(--section-spacing);
-      margin-right: var(--section-spacing);
+      padding-left: calc(var(--section-spacing) * 0);
+      padding-right: calc(var(--section-spacing) * 0);
+    }
+
+    &.call-to-action {
+      margin-left: calc(var(--section-spacing) * 1);
+      margin-right: calc(var(--section-spacing) * 1);
     }
   }
 
   /* Verical Spacing */
   .page-section-container.--vertical-spacing {
     .page-section {
-      padding-top: calc(var(--section-spacing) * 0.5);
-      padding-bottom: calc(var(--section-spacing) * 0.5);
+      padding-top: calc(var(--section-spacing) * 1);
+      padding-bottom: calc(var(--section-spacing) * 1);
     }
 
-    &:has(.navbar) {
+    &:has(.hero) {
       .page-section {
-        padding-top: calc(var(--section-spacing) * 0.25);
-        padding-bottom: calc(var(--section-spacing) * 0.25);
+        padding-top: calc(var(--section-spacing) * 1);
+        padding-bottom: calc(var(--section-spacing) * 2);
       }
     }
-
-    /* &:has(.hero) {
-    } */
 
     &:has(.featured-in) {
-      margin-bottom: calc(var(--section-spacing) * 0.5);
-
       .page-section {
-        padding-bottom: calc(var(--section-spacing) * 1);
-        border-bottom: solid 1px var(--grey-color--tint90);
+        padding-bottom: calc(var(--section-spacing) * 1.5);
       }
+
+      margin-bottom: calc(var(--section-spacing) * 2);
+      border-bottom: solid 1px var(--grey-color--tint90);
     }
 
     &:has(.how-it-works) {
@@ -84,7 +75,7 @@ html {
     }
 
     &:has(.meals) {
-      margin-bottom: calc(var(--section-spacing) * 2);
+      margin-bottom: calc(var(--section-spacing) * 3);
     }
 
     &:has(.testimonials-and-gallery) {
@@ -93,11 +84,11 @@ html {
         padding-bottom: 0;
       }
 
-      margin-bottom: calc(var(--section-spacing) * 2);
+      margin-bottom: calc(var(--section-spacing) * 3);
     }
 
     &:has(.pricing-and-features) {
-      margin-bottom: calc(var(--section-spacing) * 1.25);
+      margin-bottom: calc(var(--section-spacing) * 2);
     }
 
     &:has(.call-to-action) {
@@ -106,14 +97,14 @@ html {
         padding-bottom: 0;
       }
 
-      margin-bottom: calc(var(--section-spacing) * 1.5);
+      border-bottom: solid max(0.0625rem, 1px) var(--grey-color--tint90);
+      padding-bottom: calc(var(--section-spacing) * 2);
     }
 
     &:has(.page-footer) {
       .page-section {
-        border-top: solid max(0.0625rem, 1px) var(--grey-color--tint90);
-        padding-top: calc(var(--section-spacing) * 1.5);
-        padding-bottom: calc(var(--section-spacing) * 1.5);
+        padding-top: calc(var(--section-spacing) * 2);
+        padding-bottom: calc(var(--section-spacing) * 1);
       }
     }
   }
@@ -271,6 +262,7 @@ html {
     .text {
       font-size: 1em;
       color: rgba(25 25 24 / 0.6);
+      margin-top: 1em;
       margin-bottom: 1em;
     }
   }
@@ -353,13 +345,13 @@ html {
           z-index: -1;
           width: min(0.75em, 75%);
           max-height: 75%;
-          background: var(--main-color--brightest);
+          background: var(--main-color--tint80);
         }
         &::after {
           z-index: -2;
           width: min(1em, 100%);
           max-height: 100%;
-          background: var(--main-color--brightester);
+          background: var(--main-color--tint90);
         }
       }
 

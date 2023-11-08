@@ -4,19 +4,6 @@
   --_focus-color: #228be6;
   --_grey-color: #807d7a;
 
-  --border-radius: 0.5rem;
-
-  --transition-function: ease;
-  --transition-fast: 200ms var(--transition-function);
-  --transition-normal: 300ms var(--transition-function);
-  --transition-slow: 500ms var(--transition-function);
-
-  --shadow-xs: 0 0 0.4rem rgba(0 0 0 / 0.08);
-  --shadow-s: 0 0 0.625rem rgba(0 0 0 / 0.09);
-  --shadow-m: 0 0 1rem rgba(0 0 0 / 0.1);
-  --shadow-l: 0 0 1.6rem rgba(0 0 0 / 0.11);
-  --shadow-xl: 0 0 2.5rem rgba(0 0 0 / 0.12);
-
   --main-color--tint90: #fdf2e9;
   --main-color--tint80: #fae5d3;
   --main-color--tint70: #f8d8bd;
@@ -77,6 +64,29 @@
   --text-color--main-color--darker: var(--main-color--shade70);
   --text-color--main-color--darkest: var(--main-color--shade80);
   --text-color--main-color--darkester: var(--main-color--shade90);
+
+  --border-radius: 0.5rem;
+  --section-spacing: 4rem;
+  --max-width--laptop3: 120rem; /* 1920px */
+  --max-width--laptop2: 96rem; /* 1536px */
+  --max-width--laptop1: 80rem; /* 1280px */
+  --max-width--tablet3: 60rem; /* 960px */
+  --max-width--tablet2: 48rem; /* 768px */
+  --max-width--tablet1: 40rem; /* 640px */
+  --max-width--phone3: 30rem; /* 480px */
+  --max-width--phone2: 24rem; /* 384px */
+  --max-width--phone1: 20rem; /* 320px */
+
+  --transition-function: ease;
+  --transition-fast: 200ms var(--transition-function);
+  --transition-normal: 300ms var(--transition-function);
+  --transition-slow: 500ms var(--transition-function);
+
+  --shadow-xs: 0 0 0.4rem rgba(0 0 0 / 0.08);
+  --shadow-s: 0 0 0.625rem rgba(0 0 0 / 0.09);
+  --shadow-m: 0 0 1rem rgba(0 0 0 / 0.1);
+  --shadow-l: 0 0 1.6rem rgba(0 0 0 / 0.11);
+  --shadow-xl: 0 0 2.5rem rgba(0 0 0 / 0.12);
 }
 
 * {

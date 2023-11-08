@@ -1,0 +1,25 @@
+/* 
+.page-section.--horizontal-spacing {
+    padding-left: calc(var(--section-spacing) * 0);
+    padding-right: calc(var(--section-spacing) * 0);
+
+    &.navbar {
+
+    }
+    &.hero {
+
+    }
+    &.call-to-action {
+      margin-left: calc(var(--section-spacing) * ?);
+      margin-right: calc(var(--section-spacing) * ?);
+    }
+  }
+*/
+
+/* Media Queries *************************************************************/
+/* Laptop 2 */
+@media (max-width: 96rem) {
+  .page-section.--horizontal-spacing {
+    /* background: orangered */
+  }
+}
