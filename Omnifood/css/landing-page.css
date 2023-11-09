@@ -146,8 +146,10 @@ html {
 
 /* Navbar Component **********************************************************/
 .navbar {
+  position: relative;
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   align-items: center;
   justify-content: space-between;
 
@@ -156,15 +158,78 @@ html {
     border-bottom: unset;
   }
 
-  .focusable-container {
+  .image-container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-self: start;
     .image {
       height: 1.6em;
     }
 
-    &:focus-within {
+    &.focusable-container:focus-visible {
       outline-color: transparent;
+
       .outline-on-focus {
         outline-color: var(--main-color);
+      }
+    }
+  }
+
+  .nav-buttons-container {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transition: all var(--transition-normal);
+  }
+
+  .buttons.menu-buttons {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    .button-container {
+      grid-area: 1 / 1 / 2 / 2;
+      transition: all var(--transition-normal);
+
+      &.--open-menu {
+        z-index: 0;
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      &.--close-menu {
+        z-index: -1;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .button {
+        padding: 0em;
+        color: var(--text-color);
+        background-color: transparent;
+        box-shadow: unset;
+
+        .icon-css {
+          font-size: 2.5em;
+        }
+
+        &:hover,
+        &:active {
+          color: var(--text-color--bright);
+        }
       }
     }
   }
@@ -233,11 +298,11 @@ html {
           display: flex;
 
           &:not(&:last-child) {
-            margin-right: -0.5em;
+            margin-right: -1em;
           }
 
           .image {
-            height: 1em;
+            max-height: 1.6em;
             border-radius: 50%;
             border: solid max(2px, 0.0625em) var(--main-color--tint90);
           }
@@ -384,11 +449,18 @@ html {
 
 /* Meals Component ***********************************************************/
 .meals {
+  .--center-contents {
+    .text,
+    .headline {
+      text-align: center;
+    }
+  }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: calc(var(--horizontal-spacing) * 1);
-    row-gap: 3em;
+    row-gap: 3.2em;
     margin-bottom: 3em;
   }
 
@@ -450,7 +522,7 @@ html {
   align-items: center;
 
   .testimonials-container {
-    padding: 4em calc(var(--horizontal-spacing) * 1);
+    padding: 4em calc(var(--horizontal-padding) * 1);
   }
 
   .testimonials {
@@ -510,6 +582,13 @@ html {
 
 /* Pricing and Features Component ********************************************/
 .pricing-and-features {
+  .center-contents {
+    .text,
+    .headline {
+      text-align: center;
+    }
+  }
+
   .cards {
     display: grid;
     justify-items: center;
@@ -529,7 +608,7 @@ html {
   }
 
   .cards.--pricing {
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
     margin-bottom: 2em;
   }
 
@@ -724,7 +803,8 @@ html {
   display: grid;
   grid-template-columns: repeat(2, 1.5fr) repeat(3, 1fr);
   justify-items: start;
-  gap: calc(var(--horizontal-spacing) * 1);
+  column-gap: calc(var(--horizontal-spacing) * 1);
+  row-gap: calc(var(--horizontal-spacing) * 1.5);
 
   .footer-column {
     display: flex;

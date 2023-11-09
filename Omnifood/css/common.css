@@ -137,6 +137,8 @@ html {
 
 /* Common Styles *************************************************************/
 html {
+  scroll-behavior: smooth;
+
   /* Focusable */
   .focusable,
   .focusable-container,
@@ -155,6 +157,9 @@ html {
       outline-offset: max(0.125rem, 2px);
       &:is(.focusable-container) {
         outline-offset: max(0.5rem, 8px);
+        .outline-on-focus {
+          outline-offset: max(0.125rem, 2px);
+        }
       }
     }
   }

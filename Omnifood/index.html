@@ -12,16 +12,16 @@
   <body>
     <!-- Navbar -->
     <header class="page-section-container --vertical-spacing --center-contents">
-      <div class="navbar page-section --horizontal-spacing">
-        <a class="anchor focusable-container" href="#">
+      <div class="navbar page-section --horizontal-spacing --menu-expanded_">
+        <a class="anchor image-container focusable-container" href="#">
           <img
             class="image outline-on-focus"
             src="./content/img/omnifood-logo.png"
             alt="Omnifood logo"
           />
         </a>
-        <nav>
-          <ul class="list buttons">
+        <nav class="nav-buttons-container">
+          <ul class="list buttons nav-buttons --hidden">
             <li>
               <a href="#how-it-works" class="anchor focusable --de-emphasized"
                 >How It Works</a
@@ -47,6 +47,18 @@
             </li>
           </ul>
         </nav>
+        <ul class="list buttons menu-buttons">
+          <li class="button-container --open-menu">
+            <button class="button focusable --de-emphasized">
+              <div class="icon-js" data-icon-name="menu">🍔</div>
+            </button>
+          </li>
+          <li class="button-container --close-menu">
+            <button class="button focusable --de-emphasized">
+              <div class="icon-js" data-icon-name="close">✖</div>
+            </button>
+          </li>
+        </ul>
       </div>
     </header>
     <!-- Hero -->
@@ -710,8 +722,8 @@
     </section>
     <!-- Footer -->
     <footer class="page-section-container --vertical-spacing --center-contents">
-      <div class="list page-footer page-section --horizontal-spacing">
-        <div class="footer-column --logo-socials-copyright">
+      <ul class="list page-footer page-section --horizontal-spacing">
+        <li class="footer-column --logo-socials-copyright">
           <a class="anchor focusable-container image-container" href="#">
             <img
               class="image outline-on-focus"
@@ -754,9 +766,9 @@
             Real-World Websites with HTML and CSS" online course. Use for
             learning purposes only.
           </p>
-        </div>
+        </li>
 
-        <div class="footer-column --title-contact-information">
+        <li class="footer-column --title-contact-information">
           <p class="title">Contact Us</p>
           <address class="address">
             <p class="text">
@@ -771,9 +783,9 @@
               >
             </div>
           </address>
-        </div>
+        </li>
 
-        <div class="footer-column --title-links">
+        <li class="footer-column --title-links">
           <p class="title">Account</p>
           <ul class="list links">
             <li>
@@ -789,9 +801,9 @@
               <a class="anchor focusable link" href="#">Android App</a>
             </li>
           </ul>
-        </div>
+        </li>
 
-        <div class="footer-column --title-links">
+        <li class="footer-column --title-links">
           <p class="title">Company</p>
           <ul class="list links">
             <li>
@@ -807,9 +819,9 @@
               <a class="anchor focusable link" href="#">Careers</a>
             </li>
           </ul>
-        </div>
+        </li>
 
-        <div class="footer-column --title-links">
+        <li class="footer-column --title-links">
           <p class="title">Resources</p>
           <ul class="list links">
             <li>
@@ -822,8 +834,8 @@
               <a class="anchor focusable link" href="#">Privacy & Terms</a>
             </li>
           </ul>
-        </div>
-      </div>
+        </li>
+      </ul>
     </footer>
   </body>
 </html>
