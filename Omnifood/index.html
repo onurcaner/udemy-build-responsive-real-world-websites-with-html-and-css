@@ -3,16 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnifood</title>
+    <meta
+      name="description"
+      content="Omnifood is an AI-powered 365-days-per-year food subscription that will make you eat healthy again. It is tailored to your personal tastes and nutritional needs."
+    />
+    <title>Omnifood &mdash; Never cook again!</title>
+    <link rel="icon" href="./img/favicon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./manifest.webmanifest" />
     <link href="./css/common.css" rel="stylesheet" />
     <link href="./css/landing-page.css" rel="stylesheet" />
-    <link href="./css/media-queries.css" rel="stylesheet" />
+    <link href="./css/landing-page-breakpoints.css" rel="stylesheet" />
+    <script src="./js/common.js" defer></script>
     <script src="./js/landing-page.js" defer></script>
   </head>
   <body>
     <!-- Navbar -->
     <header class="page-section-container --vertical-spacing --center-contents">
-      <div class="navbar page-section --horizontal-spacing --menu-expanded_">
+      <div class="navbar page-section --horizontal-spacing">
         <a class="anchor image-container focusable-container" href="#">
           <img
             class="image outline-on-focus"
@@ -134,13 +146,17 @@
           </aside>
         </div>
         <figure class="image-container">
-          <img
-            class="image"
-            src="./content/img/hero.png"
-            alt="Woman sitting on table holding pasta with fork,
+          <picture>
+            <source srcset="./img/hero.webp" type="image/webp" />
+            <source srcset="./img/hero-min.png" type="image/png" />
+            <img
+              class="image"
+              src="./img/hero-min.png"
+              alt="Woman sitting on table holding pasta with fork,
             A bowl containing peas and rice with slices of avocado and lemon,
             Bowls with various meals on the table"
-          />
+            />
+          </picture>
         </figure>
       </article>
     </main>
@@ -290,7 +306,7 @@
               <ul class="list tags">
                 <li><p class="tag">Vegetarian</p></li>
               </ul>
-              <h4 class="title">Japanese Gyozas</h4>
+              <h3 class="title">Japanese Gyozas</h3>
               <ul class="list properties">
                 <li class="description property">
                   <div class="icon-js" data-icon-name="fire">🔥</div>
@@ -318,7 +334,7 @@
                 <li><p class="tag">Vegan</p></li>
                 <li><p class="tag">Paleo</p></li>
               </ul>
-              <h4 class="title">Avocado Salad</h4>
+              <h3 class="title">Avocado Salad</h3>
               <ul class="list properties">
                 <li class="description property">
                   <div class="icon-js" data-icon-name="fire">🔥</div>
@@ -661,7 +677,7 @@
     <section
       class="page-section-container --vertical-spacing --center-contents"
     >
-      <div class="call-to-action page-section --horizontal-spacing">
+      <div class="call-to-action page-section card --horizontal-spacing">
         <div class="text-container">
           <header class="section-header">
             <h2 class="headline">Get your first meal for free!</h2>
@@ -762,9 +778,9 @@
             </li>
           </ul>
           <p class="text">
-            Copyright&copy; 2027 by Jonas Schmedtmann. Part of "Build Responsive
-            Real-World Websites with HTML and CSS" online course. Use for
-            learning purposes only.
+            Copyright&copy; <span class="year">2027</span> by Jonas Schmedtmann.
+            Part of "Build Responsive Real-World Websites with HTML and CSS"
+            online course. Use for learning purposes only.
           </p>
         </li>
 

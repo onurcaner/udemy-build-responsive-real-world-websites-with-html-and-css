@@ -67,6 +67,7 @@
 
   --border-radius: 0.5rem;
   --_horizontal-spacing: 4em;
+  --_vertical-spacing: 4em;
   --max-width--laptop3: 120rem; /* 1920px */
   --max-width--laptop2: 96rem; /* 1536px */
   --max-width--laptop1: 80rem; /* 1280px */
