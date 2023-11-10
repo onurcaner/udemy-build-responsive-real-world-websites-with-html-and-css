@@ -244,7 +244,7 @@ html {
 
   .buttons {
     font-size: 1.25em;
-    font-weight: 600;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: calc(var(--horizontal-spacing) * 0.5);
@@ -319,7 +319,7 @@ html {
 
       .statistic {
         font-size: 1em;
-        font-weight: 600;
+        font-weight: 500;
 
         .strong {
           color: var(--text-color--main-color--brightester);
@@ -387,7 +387,7 @@ html {
 
         .number {
           font-size: 5em;
-          font-weight: 600;
+          font-weight: 700;
           letter-spacing: -0.05ch;
           margin-bottom: 0.1em;
           color: var(--text-color--brightest);
@@ -634,7 +634,7 @@ html {
 
     .price {
       font-size: 3.2em;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: -0.03ch;
       margin-bottom: 0.25em;
       color: var(--text-color--darker);
@@ -829,6 +829,7 @@ html {
 
     .title {
       font-size: 1.125em;
+      font-weight: 500;
       line-height: 1;
       min-height: 2.4em;
     }
