@@ -10,7 +10,7 @@ Offered at: [Udemy](https://www.udemy.com/)
 
 ### 1. Lisbon Chair Shop Landing Page
 
-- Description: Landing page of the "Lisbon Chair Shop"
+- Description: The ‘Lisbon Chair Shop’ landing page designed with pixel (px) units
 
 - Requirements: None
 
@@ -20,7 +20,7 @@ Offered at: [Udemy](https://www.udemy.com/)
 
 ### 2. Components and Layout Patterns
 
-- Description: Small components.
+- Description: Some components
 
 - Requirements: None
 
@@ -30,7 +30,7 @@ Offered at: [Udemy](https://www.udemy.com/)
 
 ### 3. Omnifood Landing Page
 
-- Description: Fully responsive landing page of the "Omnifood"
+- Description: A responsive landing page for ‘Omnifood’ implemented using rem and em units, along with media queries
 
 - Requirements: None
 
