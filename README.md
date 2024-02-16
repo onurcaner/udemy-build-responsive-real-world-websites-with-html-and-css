@@ -30,12 +30,12 @@ Offered at: [Udemy](https://www.udemy.com/)
 
 ### 3. Omnifood Landing Page
 
-- Description: Landing page of the "Omnifood"
+- Description: Fully responsive landing page of the "Omnifood"
 
 - Requirements: None
 
 - Environment: Displayed in browser
 
-- Notes: Transpiled CSS is linked to [index.html](./Omnifood/index.html) by default because the CSS written inside [css folder](./Omnifood/css) utilizes the new [& nesting selector - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Nesting_selector).
+- Notes: [Transpiled CSS](./Omnifood/transpiled-css) is linked to [index.html](./Omnifood/index.html) by default because the CSS written inside [css folder](./Omnifood/css) utilizes the new [& nesting selector - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Nesting_selector).
 
 - Code: [This Repository / Omnifood](./Omnifood)
